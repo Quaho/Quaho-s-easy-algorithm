@@ -1,0 +1,45 @@
+# find prime factors of a number line 2 - 20
+num = input('Give me a number')
+help_a = 2
+prime_list = []
+num = int(num)
+while num != 1:
+    if num % help_a == 0:
+        num = num / help_a
+        prime_list.append(help_a)
+        help_a = 2
+    else:
+        help_a = help_a + 1
+print(prime_list)
+
+# test if it is right
+print(len(prime_list))
+x = 1
+for i in prime_list:
+    i = int(i) * x
+    x = i
+print(x)
+
+
+# find prime numbers in a range line 23 - 43
+primes = []
+def prime_or_not(num):
+    help_a = 2
+    x = num
+    prime_list = []
+    while num != 1:
+        if num % help_a == 0:
+            num = num / help_a
+            prime_list.append(help_a)
+            help_a = 2
+        else:
+            help_a = help_a + 1
+    if len(prime_list) == 1:
+        primes.append(x)
+    prime_list.clear()
+
+y = 543 #<<<<the range in here!
+for i in range(2,y):
+    prime_or_not(i)
+print(f'In {y} there are {len(primes)} prime numbers.')
+
